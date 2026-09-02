@@ -4,6 +4,8 @@ import AboutSection from "../Components/AboutSection";
 import ContactSection from "../Components/ContactSection";
 import ServicesPreview from "../Components/ServicesPreview";
 import ClientReview from "../Components/ClientReview";
+import Footer from "../Components/Footer";
+
 
 const Home = () => {
   return (
@@ -14,6 +16,7 @@ const Home = () => {
       <ContactSection />
       <ServicesPreview />
       <ClientReview/>
+      <Footer/>
     </>
   );
 };
