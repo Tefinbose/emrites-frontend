@@ -3,6 +3,7 @@ import StatsBar from "../Components/StatsBar";
 import AboutSection from "../Components/AboutSection";
 import ContactSection from "../Components/ContactSection";
 import ServicesPreview from "../Components/ServicesPreview";
+import ClientReview from "../Components/ClientReview";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <AboutSection />
       <ContactSection />
       <ServicesPreview />
+      <ClientReview/>
     </>
   );
 };
