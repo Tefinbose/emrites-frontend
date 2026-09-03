@@ -13,6 +13,8 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const token = JSON.parse(sessionStorage.getItem("token"))
+
   return (
     <nav className="relative z-50 bg-black text-white">
       {/* Navbar */}
@@ -67,49 +69,51 @@ const Navbar = () => {
               className="absolute right-1 top-1/2 -translate-y-1/2 text-white bg-black rounded-full p-3 "
             />
           </div>
+           { !token &&<div >
+              <Link
+              to="/login"
+              className="
+                whitespace-nowrap
+                rounded-lg
+                border
+                border-[#c99b4a]
+                px-3
+                py-2.5
+                text-sm
+                font-semibold
+                text-white
+                transition
+                duration-300
+                hover:bg-[#c99b4a]
+                hover:text-black
+                lg:px-5 m-3
+              "
+            >
+              Login
+            </Link>
+  
+            {/* Register */}
             <Link
-            to="/login"
-            className="
-              whitespace-nowrap
-              rounded-lg
-              border
-              border-[#c99b4a]
-              px-3
-              py-2.5
-              text-sm
-              font-semibold
-              text-white
-              transition
-              duration-300
-              hover:bg-[#c99b4a]
-              hover:text-black
-              lg:px-5 m-3
-            "
-          >
-            Login
-          </Link>
-
-          {/* Register */}
-          <Link
-            to="/register"
-            className="
-              whitespace-nowrap
-              rounded-lg
-              bg-[#c99b4a]
-              px-3
-              py-2.5
-              text-sm
-              font-semibold
-              text-black
-              transition
-              duration-300
-              hover:scale-105
-              hover:bg-white
-              lg:px-5
-            "
-          >
-            Register
-          </Link>
+              to="/register"
+              className="
+                whitespace-nowrap
+                rounded-lg
+                bg-[#c99b4a]
+                px-3
+                py-2.5
+                text-sm
+                font-semibold
+                text-black
+                transition
+                duration-300
+                hover:scale-105
+                hover:bg-white
+                lg:px-5
+              "
+            >
+              Register
+            </Link>
+            </div>}
         </div>
        
 

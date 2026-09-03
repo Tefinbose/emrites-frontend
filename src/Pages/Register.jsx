@@ -1,6 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { registerApi } from '../services/allApi'
 
 function Register() {
+
+const [userDetails, setuseDetails] = useState({
+  username:"",
+  email:"",
+  password:""
+})
+
+const handleRegister =async(e)=>{
+  e.preventDefault()
+  const {username,email,password}=userDetails
+  if(!username || !email || !password){
+    alert("Please fill the fields")
+  }else{
+    const result = await registerApi({username,email,password})
+    console.log(result);
+    
+  }
+}
+console.log(userDetails);
+
+
   return (
    <div className="flex min-h-[calc(100vh-76px)]
     items-center justify-center bg-white px-6">
@@ -19,11 +41,11 @@ function Register() {
 
 
         <form
-        //   onSubmit={handleSubmit}
           className="mt-8 flex flex-col gap-5"
         >
 
           <input
+          onChange={(e)=>{setuseDetails({...userDetails,username:e.target.value})}}
             type="text"
             name="name"
             placeholder="Full Name"
@@ -36,6 +58,7 @@ function Register() {
 
 
           <input
+          onChange={(e)=>{setuseDetails({...userDetails,email:e.target.value})}}
             type="email"
             name="email"
             placeholder="Email Address"
@@ -48,6 +71,7 @@ function Register() {
 
 
           <input
+          onChange={(e)=>{setuseDetails({...userDetails,password:e.target.value})}}
             type="password"
             name="password"
             placeholder="Password"
@@ -60,6 +84,7 @@ function Register() {
 
 
           <button
+          onClick={handleRegister}
             type="submit"
             className="rounded-lg bg-gradient-to-r
             from-yellow-500 to-orange-400

@@ -7,6 +7,8 @@ import ServicesPreview from "./Components/ServicesPreview";
 import AboutSection from "./Components/AboutSection";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import AdminDashboard from "./Components/adminDashboard";
+
 
 
 
@@ -25,6 +27,8 @@ function App() {
               <Route path="/insights" element={<ServicesPreview />} />
               <Route path="/register" element={<Register/>} />
               <Route path="/login" element={<Login/>} />
+              <Route path="/admin-Dashboard" element={<AdminDashboard/>} />
+              
               
 
             </Routes>
