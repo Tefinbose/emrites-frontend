@@ -46,11 +46,41 @@ const StatsBar = () => {
         </div>
 
         <div className="flex items-center justify-center rounded-2xl bg-[#f1eee9] p-5 text-black">
-          <div>
-            <p className="text-sm">Professionals</p>
+          <div className="flex items-center justify-between rounded-3xl bg-[#f1efeb] px-8 py-6">
+  
+  {/* Left Side */}
+  <div>
+    <p className="text-lg text-gray-700">Professionals</p>
 
-            <h2 className="text-3xl font-bold">120+</h2>
-          </div>
+    <h2 className="text-4xl font-bold text-black">
+      120+
+    </h2>
+  </div>
+
+  {/* Right Side - Profiles */}
+  <div className="flex items-center">
+    
+    <img
+      src="https://randomuser.me/api/portraits/men/32.jpg"
+      alt="Professional"
+      className="h-12 w-12 rounded-full border-2 border-white object-cover"
+    />
+
+    <img
+      src="https://randomuser.me/api/portraits/women/44.jpg"
+      alt="Professional"
+      className="-ml-3 h-12 w-12 rounded-full border-2 border-white object-cover"
+    />
+
+    <img
+      src="https://randomuser.me/api/portraits/men/45.jpg"
+      alt="Professional"
+      className="-ml-3 h-12 w-12 rounded-full border-2 border-white object-cover"
+    />
+
+  </div>
+
+</div>
         </div>
 
         <div className="flex items-center justify-center rounded-2xl bg-[#c99b4a] p-5 gap-3.5 text-black">
