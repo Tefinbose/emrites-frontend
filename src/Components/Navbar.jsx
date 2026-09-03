@@ -15,10 +15,8 @@ const Navbar = () => {
 
   return (
     <nav className="relative z-50 bg-black text-white">
-
       {/* Navbar */}
       <div className="flex h-20 items-center justify-between px-5 sm:px-8 md:px-12">
-
         {/* Mobile Logo */}
         <Link
           to="/"
@@ -36,26 +34,28 @@ const Navbar = () => {
           </span>
         </Link>
 
-
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
+          <Link className="font-light" to="/">
+            Home
+          </Link>
 
-          <Link className="font-light" to="/">Home</Link>
+          <Link className="font-light" to="/services">
+            Services
+          </Link>
 
-          <Link className="font-light" to="/services">Services</Link>
+          <Link className="font-light" to="/about">
+            About
+          </Link>
 
-          <Link className="font-light" to="/about">About</Link>
-
-          <Link className="font-light" to="/insights">Insights</Link>
-
+          <Link className="font-light" to="/insights">
+            Insights
+          </Link>
         </div>
-
 
         {/* Desktop Search */}
         <div className="hidden items-center md:flex">
-
           <div className="relative ">
-
             <input
               type="text"
               placeholder="Search..."
@@ -66,11 +66,52 @@ const Navbar = () => {
               icon={faMagnifyingGlass}
               className="absolute right-1 top-1/2 -translate-y-1/2 text-white bg-black rounded-full p-3 "
             />
-
           </div>
+            <Link
+            to="/login"
+            className="
+              whitespace-nowrap
+              rounded-lg
+              border
+              border-[#c99b4a]
+              px-3
+              py-2.5
+              text-sm
+              font-semibold
+              text-white
+              transition
+              duration-300
+              hover:bg-[#c99b4a]
+              hover:text-black
+              lg:px-5 m-3
+            "
+          >
+            Login
+          </Link>
 
+          {/* Register */}
+          <Link
+            to="/register"
+            className="
+              whitespace-nowrap
+              rounded-lg
+              bg-[#c99b4a]
+              px-3
+              py-2.5
+              text-sm
+              font-semibold
+              text-black
+              transition
+              duration-300
+              hover:scale-105
+              hover:bg-white
+              lg:px-5
+            "
+          >
+            Register
+          </Link>
         </div>
-
+       
 
         {/* Mobile Menu Button */}
         <button
@@ -78,20 +119,14 @@ const Navbar = () => {
           className="flex h-10 w-10 items-center justify-center text-2xl md:hidden"
           aria-label="Toggle Menu"
         >
-          <FontAwesomeIcon
-            icon={menuOpen ? faXmark : faBars}
-          />
+          <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
         </button>
-
       </div>
-
 
       {/* Mobile Menu */}
       {menuOpen && (
         <div className=" left-0 top-full  z-[100] w-full bg-black px-6 py-8 md:hidden">
-
           <div className="flex flex-col gap-6">
-
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
@@ -124,10 +159,8 @@ const Navbar = () => {
               Insights
             </Link>
 
-
             {/* Mobile Search */}
             <div className="relative mt-2">
-
               <input
                 type="text"
                 placeholder="Search..."
@@ -138,14 +171,58 @@ const Navbar = () => {
                 icon={faMagnifyingGlass}
                 className="absolute right-1 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full"
               />
-
             </div>
+            <div className="flex flex-col gap-3">
+              <Link
+            to="/login"
+            className="
+              whitespace-nowrap
+              rounded-lg
+              border
+              border-[#c99b4a]
+              px-3
+              py-2.5
+              text-sm
+              font-semibold
+              text-white
+              transition
+              duration-300
+              hover:bg-[#c99b4a]
+              hover:text-black
+              lg:px-5
+            "
+          >
+            Login
+          </Link>
 
+          {/* Register */}
+          <Link
+            to="/register"
+            className="
+              whitespace-nowrap
+              rounded-lg
+              bg-[#c99b4a]
+              px-3
+              py-2.5
+              text-sm
+              font-semibold
+              text-black
+              transition
+              duration-300
+              hover:scale-105
+              hover:bg-white
+              lg:px-5
+            "
+          >
+            Register
+          </Link>
+            </div>
+            
           </div>
-
+          
+           
         </div>
       )}
-
     </nav>
   );
 };

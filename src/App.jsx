@@ -5,6 +5,10 @@ import Home from "./Pages/Home";
 
 import ServicesPreview from "./Components/ServicesPreview";
 import AboutSection from "./Components/AboutSection";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+
+
 
 function App() {
   return (
@@ -19,6 +23,10 @@ function App() {
               <Route path="/services" element={<ServicesPreview />} />
               <Route path="/about" element={<AboutSection/>} />
               <Route path="/insights" element={<ServicesPreview />} />
+              <Route path="/register" element={<Register/>} />
+              <Route path="/login" element={<Login/>} />
+              
+
             </Routes>
           </div>
         </main>
