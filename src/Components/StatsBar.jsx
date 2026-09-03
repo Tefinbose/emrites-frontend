@@ -57,9 +57,8 @@ const StatsBar = () => {
     </h2>
   </div>
 
-  {/* Right Side - Profiles */}
+  {/* Right Side Profiles */}
   <div className="flex items-center">
-    
     <img
       src="https://randomuser.me/api/portraits/men/32.jpg"
       alt="Professional"
