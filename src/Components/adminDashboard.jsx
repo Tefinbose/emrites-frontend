@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllEnquires } from "../services/allApi";
+import { deleteEnquiriesApi, getAllEnquires } from "../services/allApi";
 
 const AdminDashboard = () => {
   const [enquiries, setEnquiries] = useState([]);
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
     };
     const result = await getAllEnquires(reqHeader);
     console.log(result);
-    
+
     if (result.status == "200") {
       setEnquiries(result.data);
     }
@@ -21,6 +21,30 @@ const AdminDashboard = () => {
   useEffect(() => {
     getEnquires();
   }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      const token = sessionStorage.getItem("token");
+
+      const reqHeader = {
+        Authorization: `Bearer ${token}`,
+      };
+
+      const result = await deleteEnquiriesApi(id, reqHeader);
+
+      if (result.status === 200) {
+        alert("Enquiry deleted successfully");
+
+        // Remove deleted enquiry from UI
+        setEnquiries((prevEnquiries) =>
+          prevEnquiries.filter((enquiry) => enquiry._id !== id),
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
@@ -32,7 +56,7 @@ const AdminDashboard = () => {
             <tr>
               <th className="p-3 text-left">Name</th>
               <th className="p-3 text-left">Email</th>
-             <th className="p-3 text-left">phone</th>
+              <th className="p-3 text-left">phone</th>
               <th className="p-3 text-left">Message</th>
               <th className="p-3 text-left">Action</th>
             </tr>
@@ -40,30 +64,25 @@ const AdminDashboard = () => {
 
           <tbody>
             {enquiries.map((enquiry) => (
-            <tr
-              key={enquiry._id}
-              className="border-b"
-            >
-              <td className="p-3">{enquiry.firstName}</td>
+              <tr key={enquiry._id} className="border-b">
+                <td className="p-3">{enquiry.firstName}</td>
 
-              <td className="p-3">{enquiry.email}</td>
+                <td className="p-3">{enquiry.email}</td>
 
-              <td className="p-3">{enquiry.phone}</td>
+                <td className="p-3">{enquiry.phone}</td>
 
-              <td className="p-3">{enquiry.message}</td>
+                <td className="p-3">{enquiry.message}</td>
 
-              <td className="p-3">
-                <button
-                  onClick={() =>
-                    handleDelete(enquiry._id)
-                  }
-                  className="rounded bg-red-500 px-3 py-2 text-white"
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-             ))} 
+                <td className="p-3">
+                  <button
+                    onClick={() => handleDelete(enquiry._id)}
+                    className="rounded bg-red-500 px-3 py-2 text-white"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

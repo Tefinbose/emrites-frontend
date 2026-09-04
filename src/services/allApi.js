@@ -13,3 +13,6 @@ export const createEnquiryApi = async(reqBody)=>{
 export const getAllEnquires = async(reqHeader)=>{
     return await commonApi("GET",`${serverUrl}/api/enquiries`,'',reqHeader)
 }
+export const deleteEnquiriesApi = async(reqBody,reqHeader)=>{
+    return await commonApi("DELETE",`${serverUrl}/api/enquiries`,reqBody,reqHeader)
+}
