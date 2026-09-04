@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,9 +12,14 @@ import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [token, setToken] = useState(sessionStorage.getItem("token"));
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("role");
 
-  const token = JSON.parse(sessionStorage.getItem("token"))
-
+    window.location.href = "/";
+  };
   return (
     <nav className="relative z-50 bg-black text-white">
       {/* Navbar */}
@@ -69,10 +74,11 @@ const Navbar = () => {
               className="absolute right-1 top-1/2 -translate-y-1/2 text-white bg-black rounded-full p-3 "
             />
           </div>
-           { !token &&<div >
+          {!token ? (
+            <div>
               <Link
-              to="/login"
-              className="
+                to="/login"
+                className="
                 whitespace-nowrap
                 rounded-lg
                 border
@@ -88,14 +94,14 @@ const Navbar = () => {
                 hover:text-black
                 lg:px-5 m-3
               "
-            >
-              Login
-            </Link>
-  
-            {/* Register */}
-            <Link
-              to="/register"
-              className="
+              >
+                Login
+              </Link>
+
+              {/* Register */}
+              <Link
+                to="/register"
+                className="
                 whitespace-nowrap
                 rounded-lg
                 bg-[#c99b4a]
@@ -110,12 +116,38 @@ const Navbar = () => {
                 hover:bg-white
                 lg:px-5
               "
+              >
+                Register
+              </Link>
+            </div>
+          )
+          :
+           (
+            <button
+              onClick={handleLogout}
+              className="
+      whitespace-nowrap
+      rounded-lg
+      border
+      border-red-500
+      px-4
+      m-2
+      py-2.5
+      text-sm
+      font-semibold
+      text-red-400
+      transition
+      duration-300
+      hover:bg-red-500
+      hover:text-white
+    "
             >
-              Register
-            </Link>
-            </div>}
+              Logout
+            </button>
+          )}
+          
         </div>
-       
+        
 
         {/* Mobile Menu Button */}
         <button
@@ -178,8 +210,8 @@ const Navbar = () => {
             </div>
             <div className="flex flex-col gap-3">
               <Link
-            to="/login"
-            className="
+                to="/login"
+                className="
               whitespace-nowrap
               rounded-lg
               border
@@ -195,14 +227,14 @@ const Navbar = () => {
               hover:text-black
               lg:px-5
             "
-          >
-            Login
-          </Link>
+              >
+                Login
+              </Link>
 
-          {/* Register */}
-          <Link
-            to="/register"
-            className="
+              {/* Register */}
+              <Link
+                to="/register"
+                className="
               whitespace-nowrap
               rounded-lg
               bg-[#c99b4a]
@@ -217,14 +249,11 @@ const Navbar = () => {
               hover:bg-white
               lg:px-5
             "
-          >
-            Register
-          </Link>
+              >
+                Register
+              </Link>
             </div>
-            
           </div>
-          
-           
         </div>
       )}
     </nav>

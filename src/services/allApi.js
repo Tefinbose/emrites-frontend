@@ -7,3 +7,9 @@ export const registerApi =async(reqBody)=>{
 export const loginApi = async(reqBody)=>{
     return await commonApi("POST",`${serverUrl}/api/auth/login`,reqBody,'')
 }
+export const createEnquiryApi = async(reqBody)=>{
+    return await commonApi("POST",`${serverUrl}/api/enquiries`,reqBody,'')
+}
+export const getAllEnquires = async(reqHeader)=>{
+    return await commonApi("GET",`${serverUrl}/api/enquiries`,'',reqHeader)
+}

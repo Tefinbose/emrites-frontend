@@ -23,8 +23,10 @@ function Login() {
         sessionStorage.setItem("role", JSON.stringify(result.data.role));
         if (result.data.role === "admin") {
           navigate("/admin-Dashboard");
+          window.location.reload();
         } else {
           navigate("/");
+          window.location.reload();
         }
       }
     }
