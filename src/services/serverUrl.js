@@ -1,1 +1,1 @@
-export const serverUrl = "http://localhost:5000"
+export const serverUrl = "https://emirites-backend-2.onrender.com/"

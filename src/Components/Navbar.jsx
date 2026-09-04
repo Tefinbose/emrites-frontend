@@ -7,6 +7,7 @@ import {
   faXmark,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { faGrip } from "@fortawesome/free-solid-svg-icons";
 
 import logo from "../assets/logo.png";
 
@@ -62,7 +63,7 @@ const Navbar = () => {
 
         {/* Desktop Search */}
         <div className="hidden items-center md:flex">
-          <div className="relative ">
+          <div className="relative me-5">
             <input
               type="text"
               placeholder="Search..."
@@ -74,60 +75,15 @@ const Navbar = () => {
               className="absolute right-1 top-1/2 -translate-y-1/2 text-white bg-[#183247] rounded-full p-3 "
             />
           </div>
-          {!token ? (
-            <div>
-              <Link
-                to="/login"
-                className="
-                whitespace-nowrap
-                rounded-lg
-                border
-                border-[#c99b4a]
-                px-3
-                py-2.5
-                text-sm
-                font-semibold
-                text-white
-                transition
-                duration-300
-                hover:bg-[#c99b4a]
-                hover:text-black
-                lg:px-5 m-3
-              "
-              >
-                Login
-              </Link>
-
-             
-            </div>
-          )
-          :
-           (
-            <button
-              onClick={handleLogout}
-              className="
-      whitespace-nowrap
-      rounded-lg
-      border
-      border-red-500
-      px-4
-      m-2
-      py-2.5
-      text-sm
-      font-semibold
-      text-red-400
-      transition
-      duration-300
-      hover:bg-red-500
-      hover:text-white
-    "
-            >
-              Logout
+          <div>
+            <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#f1eee9]">
+              <FontAwesomeIcon
+                icon={faGrip}
+                className="text-xs text-[#183247] "
+              />
             </button>
-          )}
-          
+          </div>
         </div>
-        
 
         {/* Mobile Menu Button */}
         <button
@@ -176,42 +132,24 @@ const Navbar = () => {
             </Link>
 
             {/* Mobile Search */}
-            <div className="relative mt-2">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full rounded-full px-4 py-3 pr-12 text-sm text-black bg-white outline-none"
-              />
-
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="absolute right-1 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full"
-              />
+            <div className="flex justify-center items-center w-100">
+              <div className="relative mt-2 w-full flex justify-center items-center">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="w-80  rounded-full px-4 py-3 pr-12 text-sm text-black bg-white outline-none"
+                />
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  className="absolute right-5 top-1/2 -translate-y-1/2 bg-black text-white p-2 rounded-full"
+                />
+              </div>
+              <div className="flex h-11 w-12 items-center justify-center rounded-full bg-white me-2">
+                <FontAwesomeIcon icon={faGrip} className="text-xl text-black" />
+              </div>
             </div>
-            <div className="flex flex-col gap-3">
-              <Link
-                to="/login"
-                className="
-              whitespace-nowrap
-              rounded-lg
-              border
-              border-[#c99b4a]
-              px-3
-              py-2.5
-              text-sm
-              font-semibold
-              text-white
-              transition
-              duration-300
-              hover:bg-[#c99b4a]
-              hover:text-black
-              lg:px-5
-            "
-              >
-                Login
-              </Link>
-
-            </div>
+            <div></div>
+            <div className="flex flex-col gap-3"></div>
           </div>
         </div>
       )}
