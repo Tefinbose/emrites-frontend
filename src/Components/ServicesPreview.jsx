@@ -40,9 +40,17 @@ const ServicesPreview = () => {
           </h2>
         </div>
 
-        <button className="rounded-lg bg-black px-6 py-3 text-white">
-          Learn More
-        </button>
+        <div className="flex items-center gap-3">
+          
+          <button className="rounded-2xl bg-[#183247] px-6 py-3 font-semibold text-white transition hover:scale-105">
+            Learn More
+          </button>
+
+          <button className="flex h-12 w-12 items-center justify-center rounded-full bg-[#183247] text-2xl text-white transition hover:scale-110">
+            ↗
+          </button>
+
+        </div>
 
       </div>
 
@@ -52,7 +60,7 @@ const ServicesPreview = () => {
         {services.map((service, index) => (
           <div 
             key={index}
-            className="rounded-xl bg-[#111111] p-5 text-white"
+            className={`rounded-xl  p-5 text-white ${index ===1?"bg-[#c99b4a]" : "bg-[#183247]" }`}
           >
             {/* Placeholder Image */}
             
@@ -66,7 +74,7 @@ const ServicesPreview = () => {
               {service.description}
             </p>
 
-            <button className="mt-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#c99b4a] text-black">
+            <button className={`mt-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#c99b4a] text-black ${index === 1 ?  "bg-[#ffffff]":"bg-[#111111]"}`}>
               ↗
             </button>
           </div>

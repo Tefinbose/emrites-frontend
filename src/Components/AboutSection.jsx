@@ -18,10 +18,30 @@ const AboutSection = () => {
             <span className="font-bold"> Reality</span>
           </h2>
 
-          <div className="mt-8 flex gap-4">
-            <button className="rounded-lg bg-black px-6 py-3 text-white">
+          <div className="mt-8 flex gap-4 ">
+            <button className="rounded-lg bg-[#183247] px-6 py-3 text-white">
               Learn More
             </button>
+            {/* ARROW */}
+              <button
+                to="/contact"
+                className="
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                 bg-[#183247]
+                  text-white
+                  transition
+                  hover:scale-110
+                  hover:bg-[#c99b4a]
+                  hover:text-black
+                "
+              >
+                ↗
+              </button>
 
             <button className="rounded-lg border border-black px-6 py-3">
               Gallery

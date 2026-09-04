@@ -32,10 +32,10 @@ const Hero = () => {
             className="
               flex
               flex-col
-              justify-center
+              
               px-8
               py-12
-              md:px-20
+              md:px-15
               lg:px-28
             "
           >
@@ -71,6 +71,20 @@ const Hero = () => {
             {/* HEADING */}
             <h1
               className="
+    text-4xl
+    font-light
+    leading-[0.9]
+    text-[#111]
+    sm:text-5xl
+    lg:text-5xl
+  "
+            >
+              Turn Your <span className="font-bold">Business</span>
+              <br />
+             
+            </h1>
+            <h1
+              className="
                 text-4xl
                 font-light
                 leading-tight
@@ -79,49 +93,30 @@ const Hero = () => {
                 lg:text-6xl
               "
             >
-              Turn Your <span className="font-bold">Business</span>
-              <br />
               Vision Into <span className="font-bold">Reality</span>
             </h1>
 
             {/* DESCRIPTION */}
             <p
               className="
-                mt-5
-                max-w-md
-                text-sm
-                leading-relaxed
-                text-[#222]
-                sm:text-base
+               text-sm sm:text-base md:text-lg lg:text-lg mt-4
               "
             >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Turn
-              your business ideas into reality with us.
+              br\your business ideas into reality with us.
             </p>
           </div>
 
           {/* RIGHT SIDE */}
           <div
             className="
-              flex
-              flex-col
-              items-center
-              justify-between
-              px-6
-              pt-5
-              md:px-10
+              flex flex-col items-center px-6 pt-5 md:px-10
             "
           >
             {/* TOP BUTTONS */}
             <div
               className="
-                flex
-                w-full
-                flex-wrap
-                items-center
-                justify-center
-                gap-3
-                md:justify-end
+               flex w-full flex-wrap items-center justify-center gap-3
               "
             >
               {/* LET'S GET STARTED */}
@@ -129,7 +124,7 @@ const Hero = () => {
                 to="/contact"
                 className="
                   rounded-md
-                  bg-black
+                 bg-[#183247]
                   px-5
                   py-3
                   text-sm
@@ -155,7 +150,7 @@ const Hero = () => {
                   items-center
                   justify-center
                   rounded-full
-                  bg-black
+                 bg-[#183247]
                   text-white
                   transition
                   hover:scale-110
@@ -203,9 +198,11 @@ const Hero = () => {
                   mt-8
                   h-auto
                   w-full
+                  
                   max-w-[400px]
                   object-contain
                   md:max-w-[500px]
+                  
                 "
               />
             </div>

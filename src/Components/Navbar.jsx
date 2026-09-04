@@ -21,7 +21,7 @@ const Navbar = () => {
     window.location.href = "/";
   };
   return (
-    <nav className="relative z-50 bg-black text-white">
+    <nav className="relative z-50 bg-[#183247] text-white">
       {/* Navbar */}
       <div className="flex h-20 items-center justify-between px-5 sm:px-8 md:px-12">
         {/* Mobile Logo */}
@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden  md:flex gap-14 px-10">
           <Link className="font-light" to="/">
             Home
           </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
 
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
-              className="absolute right-1 top-1/2 -translate-y-1/2 text-white bg-black rounded-full p-3 "
+              className="absolute right-1 top-1/2 -translate-y-1/2 text-white bg-[#183247] rounded-full p-3 "
             />
           </div>
           {!token ? (
@@ -98,27 +98,7 @@ const Navbar = () => {
                 Login
               </Link>
 
-              {/* Register */}
-              <Link
-                to="/register"
-                className="
-                whitespace-nowrap
-                rounded-lg
-                bg-[#c99b4a]
-                px-3
-                py-2.5
-                text-sm
-                font-semibold
-                text-black
-                transition
-                duration-300
-                hover:scale-105
-                hover:bg-white
-                lg:px-5
-              "
-              >
-                Register
-              </Link>
+             
             </div>
           )
           :
@@ -231,27 +211,6 @@ const Navbar = () => {
                 Login
               </Link>
 
-              {/* Register */}
-              <Link
-                to="/register"
-                className="
-              whitespace-nowrap
-              rounded-lg
-              bg-[#c99b4a]
-              px-3
-              py-2.5
-              text-sm
-              font-semibold
-              text-black
-              transition
-              duration-300
-              hover:scale-105
-              hover:bg-white
-              lg:px-5
-            "
-              >
-                Register
-              </Link>
             </div>
           </div>
         </div>

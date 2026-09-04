@@ -23,7 +23,7 @@ const creatEnquiry = async(e)=>{
 
  
   return (
-    <section className="bg-[#111111] px-10 py-16 md:px-20">
+    <section className="bg-[#183247] px-10 py-16 md:px-20">
 
       <form className="mx-auto max-w-4xl">
 
@@ -39,7 +39,7 @@ const creatEnquiry = async(e)=>{
              onChange={(e)=>{setFormData({...formData,firstName:e.target.value})}}
               type="text"
               placeholder="Enter First Name"
-              className="w-full rounded-lg bg-[#eee8df] px-5 py-4 outline-none"
+              className="w-full rounded-lg bg-[#c99b4a] px-5 py-4 outline-none  placeholder:text-white"
             />
           </div>
 
@@ -53,7 +53,7 @@ const creatEnquiry = async(e)=>{
             onChange={(e)=>{setFormData({...formData,lastName:e.target.value})}}
               type="text"
               placeholder="Enter Last Name"
-              className="w-full rounded-lg bg-[#eee8df] px-5 py-4 outline-none"
+              className="w-full rounded-lg bg-[#c99b4a] px-5 py-4 outline-none  placeholder:text-white"
             />
           </div>
 
@@ -67,7 +67,7 @@ const creatEnquiry = async(e)=>{
              onChange={(e)=>{setFormData({...formData,email:e.target.value})}}
               type="email"
               placeholder="Enter Email Address"
-              className="w-full rounded-lg bg-[#eee8df] px-5 py-4 outline-none"
+              className="w-full rounded-lg bg-[#c99b4a] px-5 py-4 outline-none placeholder:text-white"
             />
           </div>
 
@@ -81,7 +81,7 @@ const creatEnquiry = async(e)=>{
              onChange={(e)=>{setFormData({...formData,phone:e.target.value})}}
               type="tel"
               placeholder="Enter Phone Number"
-              className="w-full rounded-lg bg-[#eee8df] px-5 py-4 outline-none"
+              className="w-full rounded-lg bg-[#c99b4a] px-5 py-4 outline-none  placeholder:text-white"
             />
           </div>
 
@@ -97,7 +97,7 @@ const creatEnquiry = async(e)=>{
            onChange={(e)=>{setFormData({...formData,message:e.target.value})}}
             rows="5"
             placeholder="Any Additional Message..."
-            className="w-full resize-none rounded-lg bg-[#eee8df] px-5 py-4 outline-none"
+            className="w-full resize-none rounded-lg bg-[#c99b4a] px-5 py-4 outline-none  placeholder:text-white"
           />
         </div>
 

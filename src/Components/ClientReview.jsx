@@ -45,7 +45,7 @@ const ClientReview = () => {
           </button>
 
           <button className="flex h-12 w-12 items-center justify-center rounded-full bg-[#183247] text-2xl text-white transition hover:scale-110">
-            →
+            ↗
           </button>
 
         </div>
