@@ -9,28 +9,51 @@ function Login() {
   });
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    const { email, password } = userDetails;
-    if (!email || !password) {
-      alert("Please fill all the fields");
-    } else {
-      const result = await loginApi({ email, password });
-      console.log(result.data);
-      if (result.status == "200") {
-        sessionStorage.setItem("token", JSON.stringify(result.data.token));
-        sessionStorage.setItem("user", JSON.stringify(result.data.user));
-        sessionStorage.setItem("role", JSON.stringify(result.data.role));
-        if (result.data.role === "admin") {
-          navigate("/admin-Dashboard");
-          window.location.reload();
-        } else {
-          navigate("/");
-          window.location.reload();
-        }
+ const handleLogin = async (e) => {
+  e.preventDefault();
+
+  const { email, password } = userDetails;
+
+  if (!email || !password) {
+    alert("Please fill all the fields");
+    return;
+  }
+
+  try {
+    const result = await loginApi({ email, password });
+
+    console.log("Success:", result);
+
+    if (result.status === 200) {
+      sessionStorage.setItem("token", result.data.token);
+      sessionStorage.setItem("user", JSON.stringify(result.data.user));
+      sessionStorage.setItem("role", result.data.role);
+
+      alert("Login successful");
+
+      if (result.data.role === "admin") {
+        navigate("/admin-Dashboard");
+      } else {
+        navigate("/");
       }
+      
     }
-  };
+
+  } catch (error) {
+    console.log("Error:", error);
+
+    // This will show backend error
+    if (error.response) {
+      alert(
+        error.response.data.message || "Incorrect email or password"
+      );
+      return;
+    }
+
+    // Server/network error
+    alert("Server error. Please try again later.");
+  }
+};
   console.log(userDetails);
 
   return (
