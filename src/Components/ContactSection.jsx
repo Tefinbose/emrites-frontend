@@ -109,7 +109,7 @@ const ContactSection = () => {
             onChange={(e) => {
               setFormData({ ...formData, message: e.target.value });
             }}
-            value={fo}
+            value={formData.message}
             rows="5"
             placeholder="Any Additional Message..."
             className="w-full resize-none rounded-lg bg-[#c99b4a] px-5 py-4 outline-none  placeholder:text-white"
