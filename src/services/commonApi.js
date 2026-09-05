@@ -12,6 +12,6 @@ export const commonApi = async(httpRequest,url,reqBody,reqHeader)=>{
         return res
     })
     .catch((err)=>{
-        return err
+        throw err
     })
 };
